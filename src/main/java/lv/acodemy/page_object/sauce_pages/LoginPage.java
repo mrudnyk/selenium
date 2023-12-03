@@ -8,20 +8,18 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.openqa.selenium.support.How.NAME;
-import static org.openqa.selenium.support.How.XPATH;
+import static org.openqa.selenium.support.How.*;
 
 public class LoginPage {
 
-    private final WebDriver driver = LocalDriverManager.getInstance();
     public LoginPage() {
+        WebDriver driver = LocalDriverManager.getInstance();
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(how = XPATH, xpath = "//input[@data-test='username']")
-    WebElement userNameField;
-
-    @FindBy(how = XPATH, xpath = "//input[@data-test='password']")
+    WebElement usernameField;
+    @FindBy(how = ID, id = "password")
     WebElement passwordField;
     @FindBy(how = NAME, name = "login-button")
     WebElement loginButton;
@@ -30,9 +28,8 @@ public class LoginPage {
     WebElement errorMessage;
 
     public void authorize(String username, String password) {
-        userNameField.sendKeys(username);
+        usernameField.sendKeys(username);
         passwordField.sendKeys(password);
         loginButton.click();
     }
-
 }
