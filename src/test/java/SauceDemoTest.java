@@ -1,5 +1,5 @@
-import lv.acodemy.page_object.sauce_pages.InventoryPage;
-import lv.acodemy.page_object.sauce_pages.LoginPage;
+import lv.acodemy.sauce_pages.InventoryPage;
+import lv.acodemy.sauce_pages.LoginPage;
 import lv.acodemy.utils.LocalDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
@@ -7,7 +7,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.time.Duration;
+
 import static lv.acodemy.utils.ConfigurationProperties.getConfiguration;
 import static lv.acodemy.utils.LocalDriverManager.closeDriver;
 import static lv.acodemy.utils.constants.ErrorMessage.*;
