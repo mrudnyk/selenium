@@ -2,24 +2,20 @@ import lv.acodemy.sauce_pages.AddToBasket;
 import lv.acodemy.sauce_pages.InventoryPage;
 import lv.acodemy.sauce_pages.LoginPage;
 import lv.acodemy.utils.LocalDriverManager;
-import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
-
 import static lv.acodemy.sauce_pages.AddToBasket.PRODUCT_TITLE;
 import static lv.acodemy.utils.ConfigurationProperties.getConfiguration;
 import static lv.acodemy.utils.LocalDriverManager.closeDriver;
 import static lv.acodemy.utils.constants.ErrorMessage.*;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.openqa.selenium.support.ui.ExpectedConditions.*;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 public class SauceDemoTest {
     WebDriver driver;
@@ -74,8 +70,6 @@ public class SauceDemoTest {
         wait.until(visibilityOf(addToBasket.getCartItem()));
         assertThat(addToBasket.getCartItem().getText()).isEqualTo(PRODUCT_TITLE);
     }
-
-
 
     @AfterMethod
     public void after() {
