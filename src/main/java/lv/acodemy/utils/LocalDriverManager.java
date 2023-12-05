@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LocalDriverManager {
-   private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+   public static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     private LocalDriverManager() {
     }
