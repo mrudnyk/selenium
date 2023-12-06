@@ -1,15 +1,20 @@
 import lv.acodemy.sauce_pages.AddToBasket;
 import lv.acodemy.sauce_pages.InventoryPage;
 import lv.acodemy.sauce_pages.LoginPage;
+import lv.acodemy.sauce_pages.OrderPlacement;
 import lv.acodemy.utils.LocalDriverManager;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.time.Duration;
+
 import static lv.acodemy.sauce_pages.AddToBasket.PRODUCT_TITLE;
+import static lv.acodemy.sauce_pages.OrderPlacement.ORDER_COMPLETE_MESSAGE;
 import static lv.acodemy.utils.ConfigurationProperties.getConfiguration;
 import static lv.acodemy.utils.LocalDriverManager.closeDriver;
 import static lv.acodemy.utils.constants.ErrorMessage.*;
@@ -23,6 +28,7 @@ public class SauceDemoTest {
     InventoryPage inventoryPage;
     Wait<WebDriver> wait;
     AddToBasket addToBasket;
+    OrderPlacement orderPlacement;
 
     @BeforeMethod
     public void before() {
@@ -30,6 +36,7 @@ public class SauceDemoTest {
         loginPage = new LoginPage();
         inventoryPage = new InventoryPage();
         addToBasket = new AddToBasket();
+        orderPlacement = new OrderPlacement();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
@@ -69,6 +76,16 @@ public class SauceDemoTest {
         addToBasket.AddBackpackToBasket();
         wait.until(visibilityOf(addToBasket.getCartItem()));
         assertThat(addToBasket.getCartItem().getText()).isEqualTo(PRODUCT_TITLE);
+    }
+
+    @Test(description = "Test order placement")
+    public void testPlaceAnOrder() {
+        driver.get(getConfiguration().getString("sauce.demo.url"));
+        loginPage.authorize("standard_user", "secret_sauce");
+        addToBasket.AddBackpackToBasket();
+        orderPlacement.placeAnOrder("Eunice", "Christiansen", "17522");
+        wait.until(visibilityOf(orderPlacement.getCheckoutCompleteMessage()));
+        Assertions.assertThat(orderPlacement.getCheckoutCompleteMessage().getText()).isEqualTo(ORDER_COMPLETE_MESSAGE);
     }
 
     @AfterMethod
