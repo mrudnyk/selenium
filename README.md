@@ -25,6 +25,9 @@ In order to utilise this project you need to have the following installed locall
 
 * Maven:
 <br>On Windows install <a href="https://chocolatey.org/install">Chocolatey</a> and use the following command:
+```sh
+choco install maven
+```
 <br><pre>choco install maven</pre>
 On MacOS install <a href="https://brew.sh/">HomeBrew</a> and use the following command:
 <br><pre>brew install maven</pre>
