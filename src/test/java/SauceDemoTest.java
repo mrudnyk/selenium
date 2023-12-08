@@ -10,9 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
-
 import static lv.acodemy.sauce_pages.AddToBasket.PRODUCT_TITLE;
 import static lv.acodemy.sauce_pages.OrderPlacement.ORDER_COMPLETE_MESSAGE;
 import static lv.acodemy.utils.ConfigurationProperties.getConfiguration;

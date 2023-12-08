@@ -9,9 +9,7 @@ import lv.acodemy.sauce_pages.OrderPlacement;
 import lv.acodemy.utils.LocalDriverManager;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-
 import static lv.acodemy.sauce_pages.AddToBasket.PRODUCT_TITLE;
 import static lv.acodemy.sauce_pages.OrderPlacement.ORDER_COMPLETE_MESSAGE;
 import static org.assertj.core.api.Assertions.assertThat;

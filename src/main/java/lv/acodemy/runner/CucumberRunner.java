@@ -10,6 +10,7 @@ import lv.acodemy.utils.LocalDriverManager;
         glue = {"lv.acodemy.step_definitions"},
         plugin = {"pretty", "html:target/cucumber-reports.html"}
 )
+
 public class CucumberRunner extends AbstractTestNGCucumberTests {
     @After
     public static void after() {

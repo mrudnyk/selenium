@@ -25,12 +25,13 @@ In order to utilise this project you need to have the following installed locall
 
 * Maven:
 <br>On Windows install <a href="https://chocolatey.org/install">Chocolatey</a> and use the following command:
-```sh
-choco install maven
-```
-<br><pre>choco install maven</pre>
-On MacOS install <a href="https://brew.sh/">HomeBrew</a> and use the following command:
-<br><pre>brew install maven</pre>
+  ```sh
+  choco install maven
+  ```
+  On MacOS install <a href="https://brew.sh/">HomeBrew</a> and use the following command:
+  ```sh
+  brew install maven
+  ```
 * JDK (can be installed via <a href="https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html">Amazon Corretto</a>)
 * Chrome browser
 * <a href="https://git-scm.com/downloads">Git</a>
@@ -40,9 +41,13 @@ On MacOS install <a href="https://brew.sh/">HomeBrew</a> and use the following c
 To reproduce this project repeat the following steps:
 
 * Clone the repository:
-<pre>git clone mrudnyk/selenium-project</pre>
+```sh
+git clone mrudnyk/selenium-project
+```
 * Run all the tests by typing in terminal:
-<pre>mvn test</pre>
+```sh
+mvn test
+```
 
 ## <a id = "Architecture"></a>Architecture
 Framework is divided in such subsections:
