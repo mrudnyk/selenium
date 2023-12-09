@@ -4,6 +4,7 @@ import io.cucumber.java.After;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import lv.acodemy.utils.LocalDriverManager;
+import org.testng.annotations.AfterMethod;
 
 @CucumberOptions(tags = "",
         features = {"src/test/resources/features"},
@@ -12,7 +13,7 @@ import lv.acodemy.utils.LocalDriverManager;
 )
 
 public class CucumberRunner extends AbstractTestNGCucumberTests {
-    @After
+    @AfterMethod
     public static void after() {
         LocalDriverManager.closeDriver();
     }

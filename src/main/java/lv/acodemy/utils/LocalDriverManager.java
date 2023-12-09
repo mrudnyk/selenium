@@ -7,7 +7,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
 public class LocalDriverManager {
    public static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 

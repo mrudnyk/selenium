@@ -26,4 +26,4 @@ Feature: Sauce demo login feature
     And user logs in with credentials: "standard_user" and "secret_sauce"
     And user add item "Sauce Labs Backpack" to basket
     When user place an order
-    Then user is redirected to the page with a confirmation message: "Thank you for your order!" + "Your order has been dispatched, and will arrive just as fast as the pony can get there!" + "Back Home"
+    Then user see a message about completion of order placement: "Thank you for your order!"

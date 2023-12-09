@@ -56,7 +56,7 @@ public class AuthSteps {
         orderPlacement.placeAnOrder("Eunice", "Christiansen", "17522");
     }
 
-    @Then("user is redirected to the page with a confirmation message: {string} + {string} + {string}")
+    @Then("user see a message about completion of order placement: {string}")
     public void checkConfirmationMessage() {
         wait.until(visibilityOf(orderPlacement.getCheckoutCompleteMessage()));
         Assertions.assertThat(orderPlacement.getCheckoutCompleteMessage().getText()).isEqualTo(ORDER_COMPLETE_MESSAGE);

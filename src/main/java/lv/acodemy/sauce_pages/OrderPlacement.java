@@ -27,12 +27,10 @@ public class OrderPlacement {
     @FindBy (how = NAME, name = "finish")
     WebElement finishButton;
     @Getter
-    @FindBy (how = XPATH, xpath = "//div[@id='checkout_complete_container']")
+    @FindBy (how = XPATH, xpath = "//*[@id=\"checkout_complete_container\"]/h2")
     WebElement checkoutCompleteMessage;
 
-    public static final String ORDER_COMPLETE_MESSAGE = "Thank you for your order!\n" +
-            "Your order has been dispatched, and will arrive just as fast as the pony can get there!\n" +
-            "Back Home";
+    public static final String ORDER_COMPLETE_MESSAGE = "Thank you for your order!";
 
     public void placeAnOrder (String firstName, String lastName, String zip) {
         checkoutButton.click();
