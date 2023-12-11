@@ -26,4 +26,4 @@ Feature: Sauce demo login feature
     And user logs in with credentials: "standard_user" and "secret_sauce"
     And user add item "Sauce Labs Backpack" to basket
     When user place an order
-    Then user see a message about completion of order placement: "Thank you for your order!"
+    Then user is redirected to the page with a message about completion of order placement
